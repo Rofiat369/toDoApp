@@ -4,7 +4,7 @@ import './App.css';
 const App: FunctionComponent = () => {
   return (
     <div className="App">
-      <span className="heading">To Do</span>
+      <span className="heading">Taskify</span>
     </div>
   );
 }
