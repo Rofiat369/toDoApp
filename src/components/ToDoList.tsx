@@ -11,7 +11,9 @@ interface ToDoListProps {
 
 const ToDoList:FunctionComponent<ToDoListProps> = ({todos, setTodos}) => {
     return (
+        <div className="container">
         <div className="todos">
+            <span className="todo__heading">Active Tasks</span>
             {todos.map(todo => (
                 <SingleToDo 
                 todo={todo} 
@@ -21,6 +23,18 @@ const ToDoList:FunctionComponent<ToDoListProps> = ({todos, setTodos}) => {
                 />
             ))}
         </div>
+        <div className="todos remove">
+        <span className="todo__heading">Completed Tasks</span>
+            {todos.map(todo => (
+                <SingleToDo 
+                todo={todo} 
+                key={todo.id}
+                todos={todos}
+                setToDos={setTodos}
+                />
+            ))}
+        </div>
+    </div>
     )
 }
 
