@@ -3,7 +3,6 @@ import { ToDos } from "../model";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import "./styles.css";
-import ToDoList from "./ToDoList";
 
 interface SingleToDoProps {
   todo: ToDos;
@@ -39,15 +38,11 @@ const SingleToDo: FunctionComponent<SingleToDoProps> = ({
     setEdit(false);
   };
 
-
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-inputRef.current?.focus()
-  }, [edit])
-
-  
-
+    inputRef.current?.focus();
+  }, [edit]);
 
   return (
     <form
@@ -56,7 +51,7 @@ inputRef.current?.focus()
     >
       {edit ? (
         <input
-        ref={inputRef}
+          ref={inputRef}
           value={editToDo}
           onChange={(event) => setEditToDo(event.target.value)}
           className="todos__single--text"
